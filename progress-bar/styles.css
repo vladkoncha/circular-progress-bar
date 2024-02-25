@@ -14,8 +14,7 @@
 }
 
 .circular-bar-container {
-  --progress-back-color: #eef3f6;
-  --progress-color: #015cff;
+  --progress-width: 0.75rem;
 
   position: relative;
   width: 100%;
@@ -35,20 +34,25 @@
   height: 100%;
 
   fill: none;
+}
 
-  circle {
-    width: 100%;
-    height: 100%;
-  }
+.progress-circle circle {
+  width: 100%;
+  height: 100%;
+  stroke-width: calc(var(--progress-width) / 2);
+
+  /* Radius is provided to the center of border.
+  To place the circle exactly inside of the container, we need to subtract half stroke-width */
+  r: calc(50% - var(--progress-width) / 4);
 }
 
 .back-circle {
-  stroke: var(--progress-back-color);
+  stroke: var(--secondary-color);
 }
 
 .value-circle {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 
-  stroke: var(--progress-color);
+  stroke: var(--primary-color);
 }
