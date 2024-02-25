@@ -1,0 +1,54 @@
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.container {
+  width: 12rem;
+  height: 12rem;
+}
+
+.circular-bar-container {
+  --progress-back-color: #eef3f6;
+  --progress-color: #015cff;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px dashed violet;
+}
+
+.progress-circle {
+  position: absolute;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  circle {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.back-circle {
+  stroke: var(--progress-back-color);
+}
+
+.value-circle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+
+  stroke: var(--progress-color);
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar Preview</title>
+    <meta
+      name="description"
+      content="Preview of a circular progress bar component"
+    />
+
+    <link rel="stylesheet" href="page.css" />
+    <link rel="stylesheet" href="progress-bar/styles.css" />
+    <script defer src="progress-bar/progress-bar.js"></script>
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="container">
+        <div class="circular-bar-container">
+          <label
+            class="progress-label visually-hidden"
+            for="progress-bar"
+          ></label>
+          <progress
+            class="progress visually-hidden"
+            id="progress-bar"
+            max="100"
+          ></progress>
+          <svg
+            class="progress-circle"
+            xmens="http://www.w3.org/2000/svg."
+            version="1.1"
+            viewBox="0 0 100 100"
+          >
+            <circle
+              class="back-circle"
+              cx="50"
+              cy="50"
+              r="47"
+              stroke-width="6"
+            />
+          </svg>
+          <svg
+            class="progress-circle"
+            xmens="http://www.w3.org/2000/svg."
+            version="1.1"
+            viewBox="0 0 100 100"
+          >
+            <circle
+              class="value-circle"
+              cx="50"
+              cy="50"
+              r="47"
+              stroke-width="6"
+              pathLength="100"
+              stroke-dasharray="100"
+              stroke-dashoffset="50"
+            />
+          </svg>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
