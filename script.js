@@ -4,6 +4,11 @@ const progressValueInput = document.querySelector(".progress-value-input");
 const animationSwitch = document.querySelector(".animate-switch");
 const visibilitySwitch = document.querySelector(".hide-switch");
 
+const form = document.querySelector(".progress-form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
+
 const progressBarContainer = document.querySelector(".circular-bar-container");
 const progressElement = document.querySelector(".progress");
 const valueCircle = document.querySelector(".value-circle");
