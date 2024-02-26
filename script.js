@@ -4,14 +4,20 @@ const progressValueInput = document.querySelector(".progress-value-input");
 const animationSwitch = document.querySelector(".animate-switch");
 const visibilitySwitch = document.querySelector(".hide-switch");
 
-const progressBarElement = document.querySelector(".circular-bar-container");
+const progressBarContainer = document.querySelector(".circular-bar-container");
+const progressElement = document.querySelector(".progress");
 const valueCircle = document.querySelector(".value-circle");
 
-const progressBar = new ProgressBar(progressBarElement, valueCircle, {
-  value: +progressValueInput.value,
-  animated: animationSwitch.checked,
-  hidden: visibilitySwitch.checked,
-});
+const progressBar = new ProgressBar(
+  progressBarContainer,
+  progressElement,
+  valueCircle,
+  {
+    value: +progressValueInput.value,
+    animated: animationSwitch.checked,
+    hidden: visibilitySwitch.checked,
+  }
+);
 
 const handleValueInput = () => {
   progressBar.setValue(+progressValueInput.value);

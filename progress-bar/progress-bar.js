@@ -2,12 +2,14 @@
 const MAX_VALUE = 100;
 
 export class ProgressBar {
-  #progressBarElement = null;
+  #progressBarContainer = null;
   #valueCircle = null;
+  #progressElement = null;
   #state = { value: 50, animated: false, hidden: false };
 
-  constructor(progressBarElement, valueCircle, params) {
-    this.#progressBarElement = progressBarElement;
+  constructor(progressBarContainer, progressElement, valueCircle, params) {
+    this.#progressBarContainer = progressBarContainer;
+    this.#progressElement = progressElement;
     this.#valueCircle = valueCircle;
     this.#state = { ...this.#state, ...params };
 
@@ -33,6 +35,7 @@ export class ProgressBar {
   setValue(value) {
     this.#state.value = value;
 
+    this.#progressElement.setAttribute("value", this.#state.value);
     this.#valueCircle.setAttribute(
       "stroke-dashoffset",
       MAX_VALUE - this.#state.value
@@ -56,11 +59,11 @@ export class ProgressBar {
 
   show() {
     this.#state.hidden = false;
-    this.#progressBarElement.style.visibility = "visible";
+    this.#progressBarContainer.style.visibility = "visible";
   }
 
   hide() {
     this.#state.hidden = true;
-    this.#progressBarElement.style.visibility = "hidden";
+    this.#progressBarContainer.style.visibility = "hidden";
   }
 }
