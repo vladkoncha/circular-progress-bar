@@ -33,7 +33,7 @@ export class ProgressBar {
   }
 
   setValue(value) {
-    this.#state.value = value;
+    this.#state.value = Math.min(value, MAX_VALUE);
 
     this.#progressElement.setAttribute("value", this.#state.value);
     this.#valueCircle.setAttribute(
