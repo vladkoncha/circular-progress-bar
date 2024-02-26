@@ -1,6 +1,7 @@
 :root {
   --primary-color: #015cff;
   --secondary-color: #eef3f6;
+  --border-color: #1d1d1d;
   --border-radius: 1.5rem;
   --form-input-width: 4.5rem;
 }
@@ -37,7 +38,7 @@ body {
 }
 
 .progress-form {
-  width: 14rem;
+  width: 12rem;
 
   display: flex;
   flex-direction: column;
@@ -60,7 +61,7 @@ body {
 
 .progress-value-input {
   padding: 0.5rem 0.75rem;
-  border: 1px solid #1d1d1d;
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
 
   text-align: center;
@@ -102,6 +103,10 @@ body {
 
 .switch-checkbox:checked + .switch::after {
   left: calc(var(--switch-width) - var(--switch-height));
+}
+
+.switch-checkbox:focus-visible + .switch {
+  outline: solid var(--border-color);
 }
 
 .switch-checkbox:checked + .switch {

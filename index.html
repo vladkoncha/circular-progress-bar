@@ -9,13 +9,13 @@
       content="Preview of a circular progress bar component"
     />
 
-    <link rel="stylesheet" href="page.css" />
-    <link rel="stylesheet" href="progress-bar/styles.css" />
-    <script defer src="progress-bar/progress-bar.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./progress-bar/styles.css" />
+    <script type="module" defer src="script.js"></script>
   </head>
   <body>
     <main class="main-container">
-      <div class="container">
+      <div class="progress-bar-container">
         <div class="circular-bar-container">
           <label
             class="progress-label visually-hidden"
@@ -61,14 +61,14 @@
             type="number"
             min="0"
             max="100"
-            value="0"
+            value="50"
           />
           <label for="progress-value-input">Value</label>
         </div>
         <div class="form-item">
           <div class="switch-container">
             <input
-              class="switch-checkbox"
+              class="animate-switch switch-checkbox"
               name="animate"
               id="animate"
               type="checkbox"
@@ -80,7 +80,7 @@
         <div class="form-item">
           <div class="switch-container">
             <input
-              class="switch-checkbox"
+              class="hide-switch switch-checkbox"
               name="hide"
               id="hide"
               type="checkbox"
